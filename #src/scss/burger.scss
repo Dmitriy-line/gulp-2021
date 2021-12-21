@@ -1,0 +1,52 @@
+.burger {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gray);
+    transition: all ease-in 0.2s;
+  }
+  span {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--gray);
+    transition: all ease-in 0.2s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gray);
+    transition: all ease-in 0.2s;
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+//анимация бургера
+.burger.active::before {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.burger.active span {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.burger.active::after {
+  bottom: 6px;
+  transform: rotate(-45deg);
+}
