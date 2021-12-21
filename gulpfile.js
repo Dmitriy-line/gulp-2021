@@ -141,6 +141,8 @@ function images() {
 		)
 		.pipe(dest(path.build.img))
 }
+
+
 function fonts() {
 	src(path.src.fonts)
 		.pipe(ttf2woff())
