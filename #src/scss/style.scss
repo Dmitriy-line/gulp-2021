@@ -7,7 +7,75 @@
 //HEADER
 
 //BODY
+//MODALKA
 
+:root{
+  --popup-bg:rgba(31, 26, 26, 0.836);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--popup-bg);
+  opacity: 0;
+  visibility: hidden;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.popup-inner {
+  position: absolute;
+  top: 50px;
+  padding: 20px 10px;
+  max-width: 700px;
+  height: 85vh;
+  overflow: auto;
+  background: #fff;
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+}
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background: #fff;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  &:hover{
+    transform: rotate(90deg);
+  }
+  &::before{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 80%;
+    height: 2px;
+    background: var(--popup-bg);
+  }
+  &::after{
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 80%;
+    height: 2px;
+    background: var(--popup-bg);
+  }
+}
 //FOOTER
 
 // подключения других элементов
